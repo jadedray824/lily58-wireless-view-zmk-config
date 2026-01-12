@@ -21,28 +21,6 @@
 };
 
 / {
-    behaviors {
-        mm_up: mm_up {
-            compatible = "zmk,behavior-mouse-move";
-            #binding-cells = <0>;
-            movement = <1 0>;
-        };
-        mm_down: mm_down {
-            compatible = "zmk,behavior-mouse-move";
-            #binding-cells = <0>;
-            movement = <-1 0>;
-        };
-        mm_left: mm_left {
-            compatible = "zmk,behavior-mouse-move";
-            #binding-cells = <0>;
-            movement = <0 -1>;
-        };
-        mm_right: mm_right {
-            compatible = "zmk,behavior-mouse-move";
-            #binding-cells = <0>;
-            movement = <0 1>;
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -104,18 +82,19 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-               mouse_init {
+                    mouse {
             display-name = "Mouse";
             bindings = <
-&mmv 1    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
-&trans    &trans &trans &trans  &trans  &trans                       &trans      &trans    &trans    &trans   &trans    &trans
-&trans    &trans &trans &trans  &trans  &trans                       &trans      &mmv 3    &mmv 2    &mmv 1   &mmv 4    &trans
-&msc 1    &msc 2 &trans &trans  &trans  &trans   &trans   &trans     &mkp 1      &mkp 2    &trans    &trans   &trans    &trans
-                        &trans  &trans  &trans    &trans   &trans    &trans      &trans    &trans
+&mmv MOVE_UP  &trans &trans &trans  &trans  &trans                       &trans         &trans        &trans        &trans       &trans        &trans
+&trans        &trans &trans &trans  &trans  &trans                       &trans         &trans        &trans        &trans       &trans        &trans
+&trans        &trans &trans &trans  &trans  &trans                       &trans         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP  &mmv MOVE_RIGHT &trans
+&msc SCRL_UP  &msc SCRL_DOWN &trans &trans  &trans  &trans   &trans   &trans            &mkp MB1      &mkp MB2      &trans       &trans        &trans
+                        &trans      &trans  &trans    &trans   &trans    &trans         &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
+
 
 
 
