@@ -81,16 +81,17 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-    mouse_layer {
-        display-name = "Mouse";
+        mouse_init {
+        display-name = "MouseInit";
         bindings = <
-            &mkp LCLK   &mmv UP    &mkp RCLK   &msc WH_UP   &msc WH_DOWN
-            &mmv LEFT   &mmv DOWN  &mmv RIGHT  &mkp MCLK    &trans
-            &trans      &trans     &trans      &trans       &trans
-
-            &trans      &trans     &trans      &trans       &trans      &trans
+            &mmv 1   &mmv 2
+            &mmv 3   &mmv 4
+            &mkp 1   &mkp 2
+            &msc 1   &msc 2
+            &trans   &trans
         >;
     };
+
 
 
         extra_1 {
