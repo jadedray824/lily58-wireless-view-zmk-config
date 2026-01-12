@@ -42,11 +42,7 @@
             #binding-cells = <0>;
             movement = <0 1>;
         };
-    };
 
-    keymap {
-        ...
-    };
 };
 
     keymap {
